@@ -22,7 +22,7 @@ abstract class TestCase extends BaseTestCase
         if ($this->expectedTimeout) {
             $duration = (hrtime(true) - $this->start) / 1e9;
             $this->assertGreaterThanOrEqual($this->expectedTimeout, $duration);
-            $this->assertLessThan($this->expectedTimeout + 1.25, $duration);
+            $this->assertLessThan($this->expectedTimeout + 0.25, $duration);
         }
     }
 }

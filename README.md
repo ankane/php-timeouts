@@ -17,6 +17,7 @@ Standard library
 Packages
 
 - [guzzlehttp/guzzle](#guzzlehttp-guzzle)
+- [predis/predis](#predis-predis)
 
 ## Standard Library
 
@@ -34,10 +35,20 @@ No exception is raised. Use `curl_error($ch)` to check for a timeout.
 ### guzzlehttp/guzzle
 
 ```php
-$client = new Client(['timeout'  => 1]);
+new GuzzleHttp\Client(['timeout'  => 1]);
 ```
 
 Raises `GuzzleHttp\Exception\ConnectException`
+
+### predis/predis
+
+```php
+new Predis\Client(['timeout' => 1, 'read_write_timeout' => 1]);
+```
+
+Default: 5s connect timeout
+
+Raises `Predis\Connection\ConnectionException`
 
 ## Don’t see a library you use?
 

@@ -6,7 +6,8 @@
     },
     "require": {
         "guzzlehttp/guzzle": "^7.4",
-        "predis/predis": "^2.0"
+        "predis/predis": "^2.0",
+        "symfony/http-client": "^6.1"
     },
     "autoload": {
         "psr-4": {

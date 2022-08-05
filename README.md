@@ -18,6 +18,7 @@ Packages
 
 - [guzzlehttp/guzzle](#guzzlehttpguzzle)
 - [predis/predis](#predispredis)
+- [symfony/http-client](#symfonyhttp-client)
 
 ## Standard Library
 
@@ -49,6 +50,14 @@ new Predis\Client(['timeout' => 1, 'read_write_timeout' => 1]);
 Default: 5s connect timeout
 
 Raises `Predis\Connection\ConnectionException`
+
+### symfony/http-client
+
+```php
+HttpClient::create(['timeout'  => 1]);
+```
+
+Raises `Symfony\Component\HttpClient\Exception\TimeoutException`
 
 ## Don’t see a library you use?
 

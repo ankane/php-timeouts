@@ -6,8 +6,11 @@ use PHPUnit\Framework\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
 {
-    public function expectTimeout($timeout) : void {
+    public function expectTimeout($exception = NULL, $timeout = 1) : void {
         $this->expectedTimeout = $timeout;
+        if ($exception) {
+            $this->expectException($exception);
+        }
     }
 
     protected function setUp() : void {

@@ -5,7 +5,7 @@ final class CurlTest extends TestCase
 {
     public function testConnect(): void
     {
-        $this->expectTimeout(1);
+        $this->expectTimeout();
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, '10.255.255.1');
@@ -18,7 +18,7 @@ final class CurlTest extends TestCase
 
     public function testRead(): void
     {
-        $this->expectTimeout(1);
+        $this->expectTimeout();
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, '127.0.0.1:4567');

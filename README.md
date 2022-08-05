@@ -37,7 +37,7 @@ No exception is raised. Use `curl_error($ch)` to check for a timeout.
 $client = new Client(['timeout'  => 1]);
 ```
 
-Raises `GuzzleHttp\Exception\ConnectException` on connect timeout
+Raises `GuzzleHttp\Exception\ConnectException`
 
 ## Don’t see a library you use?
 
@@ -49,6 +49,7 @@ Raises `GuzzleHttp\Exception\ConnectException` on connect timeout
 git clone https://github.com/ankane/php-timeouts.git
 cd php-timeouts
 composer install
+php tests/server.php
 ```
 
 To run all tests, use:

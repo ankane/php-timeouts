@@ -1,10 +1,12 @@
 <?php declare(strict_types=1);
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 final class CurlTest extends TestCase
 {
     public function testConnect(): void
     {
+        $this->expectTimeout(1);
+
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, '10.255.255.1');
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 1);
@@ -16,6 +18,8 @@ final class CurlTest extends TestCase
 
     public function testRead(): void
     {
+        $this->expectTimeout(1);
+
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, '127.0.0.1:4567');
         curl_setopt($ch, CURLOPT_TIMEOUT, 1);

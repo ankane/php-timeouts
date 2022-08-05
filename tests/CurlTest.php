@@ -9,7 +9,8 @@ final class CurlTest extends TestCase
         curl_setopt($ch, CURLOPT_URL, '10.255.255.1');
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 1);
         curl_exec($ch);
-        $this->assertStringContainsString('Connection timeout', curl_error($ch));
+        // 'Connection timeout' and 'Connection timed out' on different platforms
+        $this->assertStringContainsString('Connection time', curl_error($ch));
         curl_close($ch);
     }
 }

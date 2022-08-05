@@ -16,8 +16,8 @@ Standard library
 
 Packages
 
-- [guzzlehttp/guzzle](#guzzlehttp-guzzle)
-- [predis/predis](#predis-predis)
+- [guzzlehttp/guzzle](#guzzlehttpguzzle)
+- [predis/predis](#predispredis)
 
 ## Standard Library
 

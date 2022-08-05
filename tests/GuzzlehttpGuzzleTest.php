@@ -8,7 +8,7 @@ final class GuzzlehttpGuzzleTest extends TestCase
         $this->expectTimeout(GuzzleHttp\Exception\ConnectException::class);
 
         $client = new GuzzleHttp\Client(['timeout'  => 1]);
-        $client->request('GET', 'http://10.255.255.1');
+        $client->request('GET', $this->connectUrl());
     }
 
     public function testRead(): void
@@ -16,6 +16,6 @@ final class GuzzlehttpGuzzleTest extends TestCase
         $this->expectTimeout(GuzzleHttp\Exception\ConnectException::class);
 
         $client = new GuzzleHttp\Client(['timeout'  => 1]);
-        $client->request('GET', 'http://127.0.0.1:4567');
+        $client->request('GET', $this->readUrl());
     }
 }

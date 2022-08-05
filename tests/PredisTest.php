@@ -7,7 +7,7 @@ final class PredisTest extends TestCase
     {
         $this->expectTimeout(Predis\Connection\ConnectionException::class);
 
-        $client = new Predis\Client(['host' => '10.255.255.1', 'port' => 6379, 'timeout' => 1]);
+        $client = new Predis\Client(['host' => $this->connectHost(), 'timeout' => 1]);
         $client->ping();
     }
 
@@ -15,7 +15,7 @@ final class PredisTest extends TestCase
     {
         $this->expectTimeout(Predis\Connection\ConnectionException::class);
 
-        $client = new Predis\Client(['host' => '127.0.0.1', 'port' => 4567, 'read_write_timeout' => 1]);
+        $client = new Predis\Client(['host' => $this->readHost(), 'port' => $this->readPort(), 'read_write_timeout' => 1]);
         $client->ping();
     }
 }

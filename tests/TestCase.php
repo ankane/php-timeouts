@@ -25,4 +25,28 @@ abstract class TestCase extends BaseTestCase
             $this->assertLessThan($this->expectedTimeout + 0.25, $duration);
         }
     }
+
+    protected function connectHost() : string {
+        return '10.255.255.1';
+    }
+
+    protected function connectUrl() : string {
+        return 'http://' . $this->connectHost();
+    }
+
+    protected function readHost() : string {
+        return '127.0.0.1';
+    }
+
+    protected function readPort() : int {
+        return 4567;
+    }
+
+    protected function readHostAndPort() : string {
+        return $this->readHost() . ':' . $this->readPort();
+    }
+
+    protected function readUrl() : string {
+        return 'http://' . $this->readHostAndPort();
+    }
 }

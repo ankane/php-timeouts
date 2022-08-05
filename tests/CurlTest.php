@@ -8,7 +8,7 @@ final class CurlTest extends TestCase
         $this->expectTimeout();
 
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, '10.255.255.1');
+        curl_setopt($ch, CURLOPT_URL, $this->connectHost());
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 1);
         curl_exec($ch);
         // 'Connection timeout' and 'Connection timed out' on different platforms
@@ -21,7 +21,7 @@ final class CurlTest extends TestCase
         $this->expectTimeout();
 
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, '127.0.0.1:4567');
+        curl_setopt($ch, CURLOPT_URL, $this->readHostAndPort());
         curl_setopt($ch, CURLOPT_TIMEOUT, 1);
         curl_exec($ch);
         $this->assertStringContainsString('Operation timed out', curl_error($ch));

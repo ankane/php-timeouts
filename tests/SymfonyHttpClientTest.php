@@ -10,7 +10,7 @@ final class SymfonyHttpClientTest extends TestCase
         $this->expectTimeout(Symfony\Component\HttpClient\Exception\TimeoutException::class);
 
         $client = HttpClient::create(['timeout'  => 1]);
-        $client->request('GET', 'http://10.255.255.1');
+        $client->request('GET', $this->connectUrl());
     }
 
     public function testRead(): void
@@ -18,6 +18,6 @@ final class SymfonyHttpClientTest extends TestCase
         $this->expectTimeout(Symfony\Component\HttpClient\Exception\TimeoutException::class);
 
         $client = HttpClient::create(['timeout'  => 1]);
-        $client->request('GET', 'http://127.0.0.1:4567');
+        $client->request('GET', $this->readUrl());
     }
 }

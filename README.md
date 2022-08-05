@@ -17,6 +17,7 @@ Standard library
 Packages
 
 - [guzzlehttp/guzzle](#guzzlehttpguzzle)
+- [opensearch-project/opensearch-php](#opensearch-projectopensearch-php)
 - [predis/predis](#predispredis)
 - [symfony/http-client](#symfonyhttp-client)
 
@@ -40,6 +41,16 @@ new GuzzleHttp\Client(['timeout'  => 1]);
 ```
 
 Raises `GuzzleHttp\Exception\ConnectException`
+
+### opensearch-project/opensearch-php
+
+```php
+$client = (new \OpenSearch\ClientBuilder())
+    ->setConnectionParams(['client' => ['curl' => [CURLOPT_CONNECTTIMEOUT => 1, CURLOPT_TIMEOUT => 1]]])
+    ->build();
+```
+
+Raises `OpenSearch\Common\Exceptions\NoNodesAvailableException`
 
 ### predis/predis
 

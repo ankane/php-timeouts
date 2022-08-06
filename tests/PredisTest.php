@@ -1,9 +1,10 @@
-<?php declare(strict_types=1);
+<?php
+
 use Tests\TestCase;
 
 final class PredisTest extends TestCase
 {
-    public function testConnect(): void
+    public function testConnect()
     {
         $this->expectTimeout(Predis\Connection\ConnectionException::class);
 
@@ -11,7 +12,7 @@ final class PredisTest extends TestCase
         $client->ping();
     }
 
-    public function testRead(): void
+    public function testRead()
     {
         $this->expectTimeout(Predis\Connection\ConnectionException::class);
 

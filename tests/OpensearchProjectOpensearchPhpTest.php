@@ -1,9 +1,10 @@
-<?php declare(strict_types=1);
+<?php
+
 use Tests\TestCase;
 
 final class OpensearchProjectOpensearchPhpTest extends TestCase
 {
-    public function testConnect(): void
+    public function testConnect()
     {
         $this->expectTimeout(OpenSearch\Common\Exceptions\NoNodesAvailableException::class);
 
@@ -14,7 +15,7 @@ final class OpensearchProjectOpensearchPhpTest extends TestCase
         $client->info();
     }
 
-    public function testRead(): void
+    public function testRead()
     {
         $this->expectTimeout(OpenSearch\Common\Exceptions\NoNodesAvailableException::class);
 

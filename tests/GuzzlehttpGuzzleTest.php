@@ -1,9 +1,10 @@
-<?php declare(strict_types=1);
+<?php
+
 use Tests\TestCase;
 
 final class GuzzlehttpGuzzleTest extends TestCase
 {
-    public function testConnect(): void
+    public function testConnect()
     {
         $this->expectTimeout(GuzzleHttp\Exception\ConnectException::class);
 
@@ -11,7 +12,7 @@ final class GuzzlehttpGuzzleTest extends TestCase
         $client->request('GET', $this->connectUrl());
     }
 
-    public function testRead(): void
+    public function testRead()
     {
         $this->expectTimeout(GuzzleHttp\Exception\ConnectException::class);
 

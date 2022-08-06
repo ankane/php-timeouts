@@ -1,9 +1,10 @@
-<?php declare(strict_types=1);
+<?php
+
 use Tests\TestCase;
 
 final class CurlTest extends TestCase
 {
-    public function testConnect(): void
+    public function testConnect()
     {
         $this->expectTimeout();
 

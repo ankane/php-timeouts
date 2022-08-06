@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 
 namespace Tests;
 
@@ -6,19 +6,22 @@ use PHPUnit\Framework\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
 {
-    public function expectTimeout($exception = NULL, $timeout = 1) : void {
+    public function expectTimeout($exception = null, $timeout = 1)
+    {
         $this->expectedTimeout = $timeout;
         if ($exception) {
             $this->expectException($exception);
         }
     }
 
-    protected function setUp() : void {
+    protected function setUp(): void
+    {
         $this->start = hrtime(true);
-        $this->expectedTimeout = NULL;
+        $this->expectedTimeout = null;
     }
 
-    protected function tearDown() : void {
+    protected function tearDown(): void
+    {
         if ($this->expectedTimeout) {
             $duration = (hrtime(true) - $this->start) / 1e9;
             $this->assertGreaterThanOrEqual($this->expectedTimeout, $duration);
@@ -26,27 +29,33 @@ abstract class TestCase extends BaseTestCase
         }
     }
 
-    protected function connectHost() : string {
+    protected function connectHost()
+    {
         return '10.255.255.1';
     }
 
-    protected function connectUrl() : string {
+    protected function connectUrl()
+    {
         return 'http://' . $this->connectHost();
     }
 
-    protected function readHost() : string {
+    protected function readHost()
+    {
         return '127.0.0.1';
     }
 
-    protected function readPort() : int {
+    protected function readPort()
+    {
         return 4567;
     }
 
-    protected function readHostAndPort() : string {
+    protected function readHostAndPort()
+    {
         return $this->readHost() . ':' . $this->readPort();
     }
 
-    protected function readUrl() : string {
+    protected function readUrl()
+    {
         return 'http://' . $this->readHostAndPort();
     }
 }

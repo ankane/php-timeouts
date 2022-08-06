@@ -1,11 +1,12 @@
-<?php declare(strict_types=1);
+<?php
+
 use Tests\TestCase;
 
 use Symfony\Component\HttpClient\HttpClient;
 
 final class SymfonyHttpClientTest extends TestCase
 {
-    public function testConnect(): void
+    public function testConnect()
     {
         $this->expectTimeout(Symfony\Component\HttpClient\Exception\TimeoutException::class);
 
@@ -13,7 +14,7 @@ final class SymfonyHttpClientTest extends TestCase
         $client->request('GET', $this->connectUrl());
     }
 
-    public function testRead(): void
+    public function testRead()
     {
         $this->expectTimeout(Symfony\Component\HttpClient\Exception\TimeoutException::class);
 

@@ -86,11 +86,11 @@ php tests/server.php
 To run all tests, use:
 
 ```sh
-./vendor/bin/phpunit tests
+composer run test
 ```
 
 To run individual tests, use:
 
 ```sh
-./vendor/bin/phpunit tests --filter guzzle
+composer run test -- --filter guzzle
 ```

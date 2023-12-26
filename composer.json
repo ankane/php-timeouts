@@ -10,7 +10,7 @@
     "require": {
         "guzzlehttp/guzzle": "^7.4",
         "predis/predis": "^2.0",
-        "symfony/http-client": "^7.0",
+        "symfony/http-client": "^6.4",
         "opensearch-project/opensearch-php": "^2.0"
     },
     "autoload": {

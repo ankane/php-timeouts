@@ -14,7 +14,6 @@ final class CurlTest extends TestCase
         curl_exec($ch);
         // 'Connection timeout', 'Connection timed out', and 'Timeout was reached' on different platforms
         $this->assertStringContainsString('out', curl_error($ch));
-        curl_close($ch);
     }
 
     public function testRead(): void
@@ -26,6 +25,5 @@ final class CurlTest extends TestCase
         curl_setopt($ch, CURLOPT_TIMEOUT, 1);
         curl_exec($ch);
         $this->assertStringContainsString('Operation timed out', curl_error($ch));
-        curl_close($ch);
     }
 }
